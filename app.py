@@ -27,7 +27,7 @@ def deepseek():
     return(render_template("deepseek.html"))
 
 @app.route("/deepseek_llama",methods=["GET","POST"])
-def deepseek():
+def deepseek_llama():
     return(render_template("deepseek_llama.html"))
 
 @app.route("/dbs",methods=["GET","POST"])
