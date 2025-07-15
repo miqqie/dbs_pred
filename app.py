@@ -4,7 +4,7 @@ from groq import Groq
 import joblib
 import os
 
-#os.environ[''] = ""
+os.environ['GROQ_API_KEY'] = os.getenv("groq")
 
 app = Flask(__name__)
 
