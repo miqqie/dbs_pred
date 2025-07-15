@@ -69,18 +69,31 @@ def deepseek_reply():
 @app.route("/deepseek_llama_reply",methods=["GET","POST"])
 def deepseek_llama_reply():
     q = request.form.get("q")
-    # load model
+
+    # Initialize client
     client = Groq()
-    completion = client.chat.completions.create(
-    model=["deepseek-r1-distill-llama-70b","llama-3.1-8b-instant"] ,
-    messages=[
-        {
-            "role": "user",
-            "content": q
-        }
-    ]
-)
-    return(render_template("deepseek_llama_reply.html",r=completion.choices[0].message.content))
+
+    # Call DeepSeek model
+    deepseek_response = client.chat.completions.create(
+        model="deepseek-r1-distill-llama-70b",
+        messages=[{"role": "user", "content": q}]
+    )
+
+    # Call LLaMA model
+    llama_response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[{"role": "user", "content": q}]
+    )
+
+    # Extract content
+    deepseek_answer = deepseek_response.choices[0].message.content
+    llama_answer = llama_response.choices[0].message.content
+
+    return render_template(
+        "deepseek_llama_reply.html",
+        deepseek=deepseek_answer,
+        llama=llama_answer
+    )
 
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
