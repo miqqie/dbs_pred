@@ -26,9 +26,9 @@ def llama():
 def deepseek():
     return(render_template("deepseek.html"))
 
-@app.route("/deepseek+llama",methods=["GET","POST"])
+@app.route("/deepseek_llama",methods=["GET","POST"])
 def deepseek():
-    return(render_template("deepseek+llama.html"))
+    return(render_template("deepseek_llama.html"))
 
 @app.route("/dbs",methods=["GET","POST"])
 def dbs():
@@ -66,8 +66,8 @@ def deepseek_reply():
 )
     return(render_template("deepseek_reply.html",r=completion.choices[0].message.content))
 
-@app.route("/deepseek+llama_reply",methods=["GET","POST"])
-def deepseek+llama_reply():
+@app.route("/deepseek_llama_reply",methods=["GET","POST"])
+def deepseek_llama_reply():
     q = request.form.get("q")
     # load model
     client = Groq()
@@ -80,7 +80,7 @@ def deepseek+llama_reply():
         }
     ]
 )
-    return(render_template("deepseek+llama_reply.html",r=completion.choices[0].message.content))
+    return(render_template("deepseek_llama_reply.html",r=completion.choices[0].message.content))
 
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
