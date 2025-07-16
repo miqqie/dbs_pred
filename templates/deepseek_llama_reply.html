@@ -6,10 +6,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>Deepseek reply: {{deepseek}}</h2>
-        <h2>Llama reply: {{llama}}</h2>
+        <div class="flex-container">
+            <div class="container-half">
+                <h2>Deepseek Reply</h2>
+                <p>{{deepseek}}</p>
+            </div>
+            <div class="container-half">
+                <h2>Llama Reply</h2>
+                <p>{{llama}}</p>
+            </div>
+        </div>
         <form action="/main" method="post">
-            <input type="submit" value="Main">
+            <input type="submit" value="Back to Main">
         </form>
     </div>
 </body>
