@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from groq import Groq
 import joblib
 import os
+import requests
 
 os.environ['GROQ_API_KEY'] = os.getenv("groq")
 
