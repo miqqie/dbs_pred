@@ -47,6 +47,50 @@ body {
     padding-left: 25px;
 }
 
+.robot-container {
+    position: relative;
+    display: inline-block;
+}
+
+.speech-bubble {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+    z-index: 3;
+}
+
+.speech-bubble:before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #333 transparent transparent;
+    z-index: 2;
+}
+
 .robot-side {
     width: 260px;
     height: auto;
@@ -233,11 +277,25 @@ p {
         box-sizing: border-box;
     }
     
+    .robot-container {
+        margin-bottom: 15px;
+    }
+    
     .robot-side {
         width: 120px;
-        margin-bottom: 15px;
         margin-right: 0;
         position: static;
+    }
+    
+    .speech-bubble {
+        position: relative;
+        top: 0;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    
+    .speech-bubble:after, .speech-bubble:before {
+        display: none;
     }
     
     .button-container {

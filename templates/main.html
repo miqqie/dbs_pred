@@ -8,7 +8,10 @@
     <div class="container">
     <h2 style="font-size: 36px;">Main</h2>
     <div class="main-content">
-        <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
+        <div class="robot-container">
+            <div class="speech-bubble">Choose one option</div>
+            <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
+        </div>
         <div class="button-container">
             <form action="/llama" method="post">      
                 <input type="submit" value="Llama chatbot via groq">
