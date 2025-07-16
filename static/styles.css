@@ -32,7 +32,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0;
 }
 
 .button-container {
@@ -44,9 +44,9 @@ body {
 }
 
 .robot-side {
-    width: 240px;
+    width: 200px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 0;
     vertical-align: middle;
     display: inline-block;
 }
@@ -87,10 +87,12 @@ input[type="submit"]:hover:not(.telegram-btn) {
 }
 
 .container > div > div > form > input[type="submit"] {
-    width: 90%;
-    max-width: 350px;
+    width: 280px;
+    height: 50px;
     margin-bottom: 10px;
-    white-space: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 input, button {
@@ -228,6 +230,7 @@ p {
     .robot-side {
         width: 120px;
         margin-bottom: 15px;
+        margin-right: 0;
     }
     
     /* Fix the flex layout on mobile */
