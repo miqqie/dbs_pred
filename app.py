@@ -187,7 +187,9 @@ def prediction():
     model = joblib.load("dbs.jl")
     # make prediction
     pred = model.predict([[q]])
-    return(render_template("prediction.html",r=pred))
+    # Format the prediction: remove brackets and round to 2 decimal places
+    formatted_pred = round(float(pred[0]), 2)
+    return(render_template("prediction.html",r=formatted_pred))
 
 if __name__ == "__main__":
     app.run()
