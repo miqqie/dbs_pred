@@ -299,15 +299,35 @@ p {
     .speech-bubble {
         position: relative;
         top: 0;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         display: block;
         width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
     
-    .speech-bubble:after, .speech-bubble:before {
-        display: none;
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: white transparent transparent;
+        display: block;
+    }
+    
+    .speech-bubble:before {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 12px 12px 0;
+        border-style: solid;
+        border-color: #333 transparent transparent;
+        display: block;
     }
     
     .button-container {
@@ -317,11 +337,14 @@ p {
     }
     
     .container > div > div > form > input[type="submit"] {
-        height: auto !important;
-        min-height: 60px !important;
-        white-space: normal !important;
+        height: 50px !important;
+        min-height: 50px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
         width: 85% !important;
         margin: 0 auto 15px auto !important;
+        font-size: 13px !important;
     }
     
     .main-content {
