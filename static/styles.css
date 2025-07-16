@@ -59,6 +59,10 @@ input[type="submit"] {
     margin-left: 20px;
 }
 
+input[type="submit"]:hover:not(.telegram-btn) {
+    background-color: #ff9ec0;
+}
+
 .container > form > input[type="submit"] {
     width: 30%;
     margin-left: 10px;
