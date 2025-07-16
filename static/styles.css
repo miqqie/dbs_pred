@@ -336,7 +336,9 @@ p {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
     
     .container > div > div > form > input[type="submit"] {
@@ -345,7 +347,7 @@ p {
         max-height: 50px !important;
         white-space: nowrap !important;
         width: 100% !important;
-        max-width: 280px !important;
+        max-width: none !important;
         margin: 0 auto 15px auto !important;
         font-size: 11px !important;
         line-height: 1 !important;
