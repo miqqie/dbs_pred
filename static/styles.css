@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: #fffde7;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -76,7 +76,7 @@ button:hover {
 p {
     margin-top: 20px;
     font-size: 18px;
-    color: #007bff;
+    color: black;
 }
 
 @media (max-width: 768px) {
