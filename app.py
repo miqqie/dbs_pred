@@ -36,11 +36,11 @@ def telegram():
     domain_url = "https://dbs-pred-kds3.onrender.com"
 
     # The following line is used to delete the existing webhook URL for the Telegram bot
-    delete_webhook_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteWebhook"
+    delete_webhook_url = f"https://api.telegram.org/bot{os.environ.get('TELEGRAM_BOT_TOKEN')}/deleteWebhook"
     requests.post(delete_webhook_url, json={"url": domain_url, "drop_pending_updates": True})
 
     # Set the webhook URL for the Telegram bot
-    set_webhook_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setWebhook?url={domain_url}/webhook"
+    set_webhook_url = f"https://api.telegram.org/bot{os.environ.get('TELEGRAM_BOT_TOKEN')}/setWebhook?url={domain_url}/webhook"
     webhook_response = requests.post(set_webhook_url, json={"url": domain_url, "drop_pending_updates": True})
 
     if webhook_response.status_code == 200:
@@ -75,7 +75,7 @@ def webhook():
         response_message = completion_ds.choices[0].message.content
 
         # Send the response back to the Telegram chat
-        send_message_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        send_message_url = f"https://api.telegram.org/bot{os.environ.get('TELEGRAM_BOT_TOKEN')}/sendMessage"
         requests.post(send_message_url, json={
             "chat_id": chat_id,
             "text": response_message
