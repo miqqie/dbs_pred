@@ -156,6 +156,7 @@ p {
     min-height: 300px;
     max-height: 600px;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .flex-container {
@@ -163,6 +164,7 @@ p {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -176,15 +178,20 @@ p {
         padding: 15px;
         max-width: 100%;
         box-sizing: border-box;
+        overflow: hidden;
     }
 
     .flex-container {
         flex-direction: column;
+        padding: 0;
+        width: 100%;
     }
 
     .container-half {
         width: 100%;
         margin: 10px 0;
+        padding: 15px;
+        max-width: 100%;
     }
 
     h2 {
