@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', 'Open Sans', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
@@ -38,7 +38,7 @@ form {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: pink;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -62,14 +62,14 @@ input, button {
 button {
     width: 150px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: pink;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ff9ec0;
 }
 
 
