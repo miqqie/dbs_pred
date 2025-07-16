@@ -37,6 +37,9 @@ body {
 .button-container {
     flex: 1;
     min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .robot-side {
@@ -81,7 +84,8 @@ input[type="submit"]:hover:not(.telegram-btn) {
 }
 
 .container > div > div > form > input[type="submit"] {
-    width: 100%;
+    width: 80%;
+    max-width: 300px;
     margin-bottom: 10px;
 }
 
@@ -206,6 +210,7 @@ p {
         height: auto;
         word-wrap: break-word;
         width: 100% !important;
+        max-width: none !important;
         margin-left: 0 !important;
         box-sizing: border-box;
     }
