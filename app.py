@@ -139,6 +139,9 @@ def deepseek_reply():
     import re
     cleaned_response = re.sub(r'<think>.*?</think>', '', response_content, flags=re.DOTALL)
     
+    # Remove extra spaces at the top
+    cleaned_response = cleaned_response.lstrip()
+    
     return(render_template("deepseek_reply.html",r=cleaned_response))
 
 @app.route("/deepseek_llama_reply",methods=["GET","POST"])
@@ -167,6 +170,9 @@ def deepseek_llama_reply():
     # Remove content between <think> and </think> tags from Deepseek response
     import re
     cleaned_deepseek = re.sub(r'<think>.*?</think>', '', deepseek_answer, flags=re.DOTALL)
+    
+    # Remove extra spaces at the top
+    cleaned_deepseek = cleaned_deepseek.lstrip()
 
     return render_template(
         "deepseek_llama_reply.html",
