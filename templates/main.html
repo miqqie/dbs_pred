@@ -7,20 +7,24 @@
 <body>
     <div class="container">
     <h2>Main</h2>
-        <form action="/llama" method="post">      
-            <input type="submit" value="LLAMA chatbot via groq">
-        </form>
-        <form action="/deepseek" method="post">      
-            <input type="submit" value="Deepseek chatbot via groq">
-        </form>
-        <form action="/telegram" method="post">      
-            <input type="submit" value="Start Telegram">
-        </form>
-         <form action="/stop telegram" method="post">      
-            <input type="submit" value="Stop Telegram">
-        </form>
-        <form action="/dbs" method="post">      
-            <input type="submit" value="Predict DBS Price">
-        </form>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
+        <div>
+            <form action="/llama" method="post">      
+                <input type="submit" value="LLAMA chatbot via groq">
+            </form>
+            <form action="/deepseek" method="post">      
+                <input type="submit" value="Deepseek chatbot via groq">
+            </form>
+            <form action="/telegram" method="post">      
+                <input type="submit" value="Start Telegram">
+            </form>
+            <form action="/stop telegram" method="post">      
+                <input type="submit" value="Stop Telegram">
+            </form>
+            <form action="/dbs" method="post">      
+                <input type="submit" value="Predict DBS Price">
+            </form>
+        </div>
     </div>
 </body>
