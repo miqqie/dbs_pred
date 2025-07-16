@@ -96,6 +96,14 @@ button:hover {
     background-color: #ff9ec0;
 }
 
+.telegram-btn {
+    background-color: #a3d6f5;
+}
+
+.telegram-btn:hover {
+    background-color: #7fc6f4;
+}
+
 
 p {
     margin-top: 20px;
