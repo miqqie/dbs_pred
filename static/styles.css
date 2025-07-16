@@ -41,14 +41,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
 }
 
 .robot-side {
-    width: 200px;
+    width: 250px;
     height: auto;
-    margin-right: 0;
+    margin-right: -20px;
     vertical-align: middle;
     display: inline-block;
+    position: relative;
+    z-index: 1;
 }
 
 h2 {
@@ -231,6 +236,11 @@ p {
         width: 120px;
         margin-bottom: 15px;
         margin-right: 0;
+        position: static;
+    }
+    
+    .button-container {
+        padding-left: 0;
     }
     
     /* Fix the flex layout on mobile */
