@@ -32,6 +32,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 .button-container {
@@ -45,7 +46,7 @@ body {
 .robot-side {
     width: 240px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 10px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -72,6 +73,8 @@ input[type="submit"] {
     display: inline-block;
     vertical-align: middle;
     margin-left: 20px;
+    white-space: normal;
+    min-height: 50px;
 }
 
 input[type="submit"]:hover:not(.telegram-btn) {
@@ -84,9 +87,10 @@ input[type="submit"]:hover:not(.telegram-btn) {
 }
 
 .container > div > div > form > input[type="submit"] {
-    width: 80%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 350px;
     margin-bottom: 10px;
+    white-space: normal;
 }
 
 input, button {
