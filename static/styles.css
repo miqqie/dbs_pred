@@ -97,6 +97,15 @@ button:hover {
 }
 
 .telegram-btn {
+    background-color: #1e88e5;
+    color: white;
+}
+
+.telegram-btn:hover {
+    background-color: #1565c0;
+}
+
+.telegram-btn {
     background-color: #a3d6f5;
 }
 
