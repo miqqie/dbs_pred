@@ -132,7 +132,14 @@ def deepseek_reply():
         }
     ]
 )
-    return(render_template("deepseek_reply.html",r=completion.choices[0].message.content))
+    # Get the response content
+    response_content = completion.choices[0].message.content
+    
+    # Remove content between <think> and </think> tags
+    import re
+    cleaned_response = re.sub(r'<think>.*?</think>', '', response_content, flags=re.DOTALL)
+    
+    return(render_template("deepseek_reply.html",r=cleaned_response))
 
 @app.route("/deepseek_llama_reply",methods=["GET","POST"])
 def deepseek_llama_reply():
@@ -156,10 +163,14 @@ def deepseek_llama_reply():
     # Extract content
     deepseek_answer = deepseek_response.choices[0].message.content
     llama_answer = llama_response.choices[0].message.content
+    
+    # Remove content between <think> and </think> tags from Deepseek response
+    import re
+    cleaned_deepseek = re.sub(r'<think>.*?</think>', '', deepseek_answer, flags=re.DOTALL)
 
     return render_template(
         "deepseek_llama_reply.html",
-        deepseek=deepseek_answer,
+        deepseek=cleaned_deepseek,
         llama=llama_answer
     )
 
