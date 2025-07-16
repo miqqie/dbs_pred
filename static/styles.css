@@ -264,14 +264,17 @@ p {
         font-size: 14px;
         padding: 10px 15px;
         white-space: normal;
-        height: 50px !important;
+        min-height: 60px !important;
+        height: auto !important;
         word-wrap: break-word;
-        width: 90% !important;
+        width: 85% !important;
         max-width: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
         box-sizing: border-box;
         display: block;
+        overflow: visible;
+        text-overflow: clip;
     }
     
     input[type="text"] {
@@ -310,6 +313,15 @@ p {
     .button-container {
         padding-left: 0;
         flex: 1;
+        width: 100%;
+    }
+    
+    .container > div > div > form > input[type="submit"] {
+        height: auto !important;
+        min-height: 60px !important;
+        white-space: normal !important;
+        width: 85% !important;
+        margin: 0 auto 15px auto !important;
     }
     
     .main-content {
@@ -321,6 +333,7 @@ p {
     div[style*="display: flex"] {
         flex-direction: column !important;
         align-items: center;
+        width: 100%;
     }
     
     div[style*="display: flex"] > div {
