@@ -52,7 +52,7 @@ def telegram():
     return(render_template("telegram.html", status=status))
 
 @app.route("/stop telegram",methods=["GET","POST"])
-def telegram():
+def stop_telegram():
     domain_url = "https://dbs-pred-kds3.onrender.com"
 
     # The following line is used to delete the existing webhook URL for the Telegram bot
