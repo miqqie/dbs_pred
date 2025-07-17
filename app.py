@@ -116,7 +116,12 @@ def llama_reply():
         }
     ]
 )
-    return(render_template("llama_reply.html",r=completion.choices[0].message.content))
+    # Format text with ** to HTML bold tags
+    import re
+    response_content = completion.choices[0].message.content
+    formatted_content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', response_content)
+    
+    return(render_template("llama_reply.html",r=formatted_content))
 
 @app.route("/deepseek_reply",methods=["GET","POST"])
 def deepseek_reply():
@@ -142,7 +147,10 @@ def deepseek_reply():
     # Remove extra spaces at the top
     cleaned_response = cleaned_response.lstrip()
     
-    return(render_template("deepseek_reply.html",r=cleaned_response))
+    # Format text with ** to HTML bold tags
+    formatted_response = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', cleaned_response)
+    
+    return(render_template("deepseek_reply.html",r=formatted_response))
 
 @app.route("/deepseek_llama_reply",methods=["GET","POST"])
 def deepseek_llama_reply():
@@ -173,11 +181,15 @@ def deepseek_llama_reply():
     
     # Remove extra spaces at the top
     cleaned_deepseek = cleaned_deepseek.lstrip()
+    
+    # Format text with ** to HTML bold tags
+    formatted_deepseek = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', cleaned_deepseek)
+    formatted_llama = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', llama_answer)
 
     return render_template(
         "deepseek_llama_reply.html",
-        deepseek=cleaned_deepseek,
-        llama=llama_answer
+        deepseek=formatted_deepseek,
+        llama=formatted_llama
     )
 
 @app.route("/prediction",methods=["GET","POST"])
