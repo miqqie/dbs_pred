@@ -10,10 +10,11 @@ It also shows the possibility of pulling replies from different LLM models (e.g.
 
 ## Base Code Provided
 
-The base code that was provided can be found here:
-
+The base code that was provided in the course can be found here: https://github.com/miqqie/dsat-ft1
 
 ## Improvements Made
+
+Several improvements were made to the base code including: 
 
 1. Changing the colour scheme and adding a robot image for a more aesthetically pleasing interface. 
 2. Adding a page that allows for the simultaneous display of replies from both Llama and Deepseek for the user's query.
