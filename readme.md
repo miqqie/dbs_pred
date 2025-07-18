@@ -18,6 +18,6 @@ Several improvements were made to the base code including:
 
 1. Changing the colour scheme and adding a robot image for a more aesthetically pleasing interface. 
 2. Adding a page that allows for the simultaneous display of replies from both Llama and Deepseek for the user's query.
-3. Formatting the replies to make them more readable e.g. (removing the verbose enclosed in <think></think> from Deepseek's reply to make it more succinct)
+3. Formatting the replies to make them more readable e.g. (removing the verbose enclosed in "think/think"" from Deepseek's reply to make it more succinct)
 
 You can access the app here: https://dbs-pred-kds3.onrender.com
