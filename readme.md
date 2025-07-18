@@ -4,6 +4,6 @@
 
 It is an example of how a linear regression model can be deployed to generate output based on the user's inputs. 
 
-It also shows the possibilitiy of pulling replies from different LLM models (e.g. Llama and Deepseek) based on the user's query.
+It also shows the possibility of pulling replies from different LLM models (e.g. Llama and Deepseek) based on the user's query.
 
 You can access the app here: https://dbs-pred-kds3.onrender.com/?
