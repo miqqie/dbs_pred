@@ -6,7 +6,7 @@ Building a simple Flask API to predict DBS share price based on SGD-USD exchange
 
 It is an example of how a linear regression model can be deployed to generate output based on the user's inputs. 
 
-It also shows the possibility of pulling replies from different LLM models (e.g. Llama and Deepseek) based on the user's query.
+It is also able to pull replies from different LLM models (e.g. Llama and Deepseek) based on the user's query.
 
 ## Base Code Provided
 
