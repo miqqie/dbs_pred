@@ -3,13 +3,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .landing-container {
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border: 2px solid #ffeb3b;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .welcome-title {
+            color: #ff5722;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+        
+        .landing-robot {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+            margin-bottom: 25px;
+        }
+        
+        .landing-robot:hover {
+            transform: scale(1.05);
+        }
+        
+        .name-label {
+            font-size: 20px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+    </style>
 {% endblock %}
 {% block content %}
-    <div class="container">
-    <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="image-class">
-    <h2>Welcome to DSAI chatbot</h2>
+    <div class="container landing-container">
+    <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="image-class landing-robot">
+    <h2 class="welcome-title">Welcome to DSAI chatbot</h2>
         <form action="/main" method="post">
-            <p>Please enter your name </p>
+            <p class="name-label">Please enter your name </p>
             <div class="form-group">
                 <input type="text" name="q" placeholder="Your name">
                 <input type="submit" value="Enter">
