@@ -1,10 +1,5 @@
-<head>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',
-        filename='styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <div class="container">
         <h2>Llama Reply</h2>
         <div class="container-half" style="width: 80%; margin: 0 auto 20px;">
@@ -14,4 +9,4 @@
             <input type="submit" value="Back to Main">
         </form>
     </div>
-</body>
+{% endblock %}

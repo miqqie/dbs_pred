@@ -1,14 +1,10 @@
-<head>
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+{% block head %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static',
-        filename='styles.css') }}">
-
-</head>
-<body>
+{% endblock %}
+{% block content %}
     <div class="container">
     <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="image-class">
     <h2>Welcome to DSAI chatbot</h2>
@@ -20,4 +16,4 @@
             </div>
         </form>
     </div>
-</body>
+{% endblock %}
