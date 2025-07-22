@@ -15,9 +15,10 @@ def index():
 
 @app.route("/main",methods=["GET","POST"])
 def main():
-    q = request.form.get("q")
-    # db
-    return(render_template("main.html"))
+    username = request.form.get("q")
+    if not username:
+        username = "there"
+    return(render_template("main.html", username=username))
 
 @app.route("/llama",methods=["GET","POST"])
 def llama():
