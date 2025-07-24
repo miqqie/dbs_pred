@@ -126,6 +126,11 @@ h2 {
     color: #333;
 }
 
+.container h2[style*="font-size: 36px"] {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 form {
     margin: 15px 0;
 }
@@ -218,6 +223,15 @@ button:hover {
 
 .log-btn:hover {
     background-color: #dddddd !important;
+}
+
+.sepia-btn {
+    background-color: #d2b48c !important;
+    color: black;
+}
+
+.sepia-btn:hover {
+    background-color: #c19a6b !important;
 }
 
 
