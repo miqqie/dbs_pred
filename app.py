@@ -23,11 +23,10 @@ def main():
         # Save username to database
         conn = sqlite3.connect('user.db')
         c = conn.cursor()
-        # Create table if it doesn't exist
-        c.execute('''CREATE TABLE IF NOT EXISTS user
-                     (id INTEGER PRIMARY KEY, name TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)''')
-        # Insert the username
-        c.execute("INSERT INTO user (name) VALUES (?)", (username,))
+        # Insert the username - table has columns (name, timestamp)
+        import datetime
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        c.execute("INSERT INTO user VALUES (?, ?)", (username, current_time))
         conn.commit()
         conn.close()
     return(render_template("main.html", username=username))
@@ -206,22 +205,25 @@ def deepseek_llama_reply():
     )
 @app.route("/user_log",methods=["GET","POST"])
 def user_log():
-    conn = sqlite3.connect('user.db')
-    c = conn.cursor()
-    
-    # Get all users
-    c.execute('''SELECT * FROM user''')
-    rows = c.fetchall()
-    
-    # Format the results
-    if rows:
-        r = "\n".join([f"ID: {row[0]}, Name: {row[1]}, Time: {row[2]}" for row in rows])
-    else:
-        r = "No user logs found. The log is empty."
-    
-    c.close()
-    conn.close()
-    return render_template("user_log.html", r=r)
+    try:
+        conn = sqlite3.connect('user.db')
+        c = conn.cursor()
+        
+        # Get all users - the table has columns (name, timestamp)
+        c.execute('''SELECT * FROM user''')
+        rows = c.fetchall()
+        
+        # Format the results
+        if rows:
+            r = "\n".join([f"Name: {row[0]}, Time: {row[1]}" for row in rows])
+        else:
+            r = "No user logs found. The log is empty."
+        
+        c.close()
+        conn.close()
+        return render_template("user_log.html", r=r)
+    except Exception as e:
+        return f"Error: {str(e)}", 500
 
 @app.route("/delete_log",methods=["GET","POST"])
 def delete_log():
