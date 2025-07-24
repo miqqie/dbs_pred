@@ -19,6 +19,17 @@ def main():
     username = request.form.get("q")
     if not username:
         username = "there"
+    else:
+        # Save username to database
+        conn = sqlite3.connect('user.db')
+        c = conn.cursor()
+        # Create table if it doesn't exist
+        c.execute('''CREATE TABLE IF NOT EXISTS user
+                     (id INTEGER PRIMARY KEY, name TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)''')
+        # Insert the username
+        c.execute("INSERT INTO user (name) VALUES (?)", (username,))
+        conn.commit()
+        conn.close()
     return(render_template("main.html", username=username))
 
 @app.route("/llama",methods=["GET","POST"])
@@ -197,11 +208,17 @@ def deepseek_llama_reply():
 def user_log():
     conn = sqlite3.connect('user.db')
     c = conn.cursor()
-    c.execute('''select * from user''')
-    r=""
-    for row in c:
-      print(row)
-      r = r + str(row)
+    
+    # Get all users
+    c.execute('''SELECT * FROM user''')
+    rows = c.fetchall()
+    
+    # Format the results
+    if rows:
+        r = "\n".join([f"ID: {row[0]}, Name: {row[1]}, Time: {row[2]}" for row in rows])
+    else:
+        r = "No user logs found. The log is empty."
+    
     c.close()
     conn.close()
     return render_template("user_log.html", r=r)
