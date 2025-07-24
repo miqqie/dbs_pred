@@ -137,6 +137,12 @@ h2 {
     z-index: 10;
 }
 
+@media (max-width: 768px) {
+    .main-container h2[style*="font-size: 36px"] {
+        margin-top: 10px;
+    }
+}
+
 .main-container .main-content {
     margin-top: 50px;
 }
@@ -360,7 +366,7 @@ p {
         top: 0;
         margin-bottom: 25px;
         display: block;
-        width: 80%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -413,7 +419,7 @@ p {
         min-height: 50px !important;
         max-height: 50px !important;
         white-space: nowrap !important;
-        width: 100% !important;
+        width: 85% !important;
         max-width: none !important;
         margin: 0 auto 15px auto !important;
         font-size: 14px !important;
