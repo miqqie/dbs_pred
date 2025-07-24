@@ -227,12 +227,27 @@ def user_log():
 
 @app.route("/delete_log",methods=["GET","POST"])
 def delete_log():
-    conn = sqlite3.connect('user.db')
-    cursor = conn.cursor()
-    cursor.execute('DELETE FROM user')
-    conn.commit()
-    conn.close()
-    return render_template("delete_log.html", message="User log deleted successfully.")
+    try:
+        conn = sqlite3.connect('user.db')
+        cursor = conn.cursor()
+        
+        # First get all logs to display what was deleted
+        cursor.execute('SELECT * FROM user')
+        rows = cursor.fetchall()
+        
+        if rows:
+            r = "\n".join([f"Name: {row[0]}, Time: {row[1]}" for row in rows])
+        else:
+            r = "No logs to delete. The log was already empty."
+        
+        # Then delete all logs
+        cursor.execute('DELETE FROM user')
+        conn.commit()
+        conn.close()
+        
+        return render_template("delete_log.html", r=r)
+    except Exception as e:
+        return f"Error: {str(e)}", 500
 
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
