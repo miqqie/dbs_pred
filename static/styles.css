@@ -18,6 +18,7 @@ body {
     max-width: 800px;
     width: 100%;
     text-align: center;
+    min-height: 600px;
 }
 
 .image-class {
@@ -127,8 +128,10 @@ h2 {
 }
 
 .container h2[style*="font-size: 36px"] {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 10;
 }
 
 form {
