@@ -253,10 +253,6 @@ def delete_log():
 def sepia():
     return render_template("sepia_hf.html")
 
-@app.route('/sepia_hf', methods=['GET', 'POST'])
-def sepia_hf():
-    return render_template("sepia_hf.html")
-
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
     q = float(request.form.get("q"))
