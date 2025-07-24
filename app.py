@@ -4,6 +4,7 @@ from groq import Groq
 import joblib
 import os
 import requests
+import sqlite3
 
 os.environ['GROQ_API_KEY'] = os.getenv("groq")
 
