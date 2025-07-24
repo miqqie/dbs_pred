@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h2>Sepia AI</h2>
+        <script
+            type="module"
+            src="https://gradio.s3-us-west-2.amazonaws.com/5.38.1/gradio.js"
+        ></script>
+        
+        <gradio-app src="https://miqqie-sepia2.hf.space"></gradio-app>
+        
+        <form action="/main" method="post">
+            <input type="submit" value="Main">
+        </form>
+    </div>
+{% endblock %}
