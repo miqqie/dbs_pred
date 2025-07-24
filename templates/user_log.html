@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <h2>User Log Created</h2>
+        <h2>User Log Created: {r}</h2>
         <p>{{r}}</p>
         <form action="/main" method="post">
             <input type="submit" value="Main">
