@@ -40,12 +40,22 @@ body {
 .button-container {
     flex: 0 1 auto;
     min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     z-index: 2;
     padding-left: 25px;
+}
+
+.button-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Button styles */
@@ -355,11 +365,19 @@ p {
         padding-left: 0;
         flex: 1;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
         padding: 0 15px;
         box-sizing: border-box;
+    }
+    
+    .button-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+    
+    .button-column {
+        width: 100%;
     }
     
     .container > div > div > form > input[type="submit"] {

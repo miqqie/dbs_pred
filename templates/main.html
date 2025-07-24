@@ -8,36 +8,42 @@
             <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
         </div>
         <div class="button-container">
-            <form action="/llama" method="post">      
-                <input type="submit" value="Llama chatbot">
-            </form>
-            <form action="/deepseek" method="post">      
-                <input type="submit" value="Deepseek chatbot">
-            </form>
-            <form action="/deepseek_llama" method="post">      
-                <input type="submit" value="Deepseek & Llama">
-            </form>
-            <form action="/telegram" method="post">      
-                <input type="submit" class="telegram-btn" value="Start Telegram">
-            </form>
-            <form action="/stop telegram" method="post">      
-                <input type="submit" class="telegram-btn" value="Stop Telegram">
-            </form>
-            <form action="/dbs" method="post">      
-                <input type="submit" value="Predict DBS Price">
-            </form>
-            <form action="/user_log" method="post">
-                <input type="submit" class="log-btn" value="Create User Logs">
-            </form>
-            <form action="/delete_log" method="post">
-                <input type="submit" class="log-btn" value="Delete Logs">
-            </form>
-            <form action="/sepia" method="post">
-                <input type="submit" class="log-btn" value="Create Sepia Image">
-            </form>
-            <form action="/" method="get">      
-                <input type="submit" value="Back to Landing Page">
-            </form>
+            <div class="button-grid">
+                <div class="button-column">
+                    <form action="/llama" method="post">      
+                        <input type="submit" value="Llama chatbot">
+                    </form>
+                    <form action="/deepseek" method="post">      
+                        <input type="submit" value="Deepseek chatbot">
+                    </form>
+                    <form action="/deepseek_llama" method="post">      
+                        <input type="submit" value="Deepseek & Llama">
+                    </form>
+                    <form action="/telegram" method="post">      
+                        <input type="submit" class="telegram-btn" value="Start Telegram">
+                    </form>
+                    <form action="/stop telegram" method="post">      
+                        <input type="submit" class="telegram-btn" value="Stop Telegram">
+                    </form>
+                </div>
+                <div class="button-column">
+                    <form action="/dbs" method="post">      
+                        <input type="submit" value="Predict DBS Price">
+                    </form>
+                    <form action="/user_log" method="post">
+                        <input type="submit" class="log-btn" value="Create User Logs">
+                    </form>
+                    <form action="/delete_log" method="post">
+                        <input type="submit" class="log-btn" value="Delete Logs">
+                    </form>
+                    <form action="/sepia" method="post">
+                        <input type="submit" class="log-btn" value="Create Sepia Image">
+                    </form>
+                    <form action="/" method="get">      
+                        <input type="submit" value="Back to Landing Page">
+                    </form>
+                </div>
+            </div>
             
         </div>
     </div>
