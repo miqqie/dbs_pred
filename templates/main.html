@@ -8,31 +8,34 @@
             <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
         </div>
         <div class="button-container">
-            <form action="/llama" method="post">      
+            <!-- First Column -->
+            <form action="/llama" method="post" class="column-1">      
                 <input type="submit" value="Llama chatbot">
             </form>
-            <form action="/deepseek" method="post">      
+            <form action="/deepseek" method="post" class="column-1">      
                 <input type="submit" value="Deepseek chatbot">
             </form>
-            <form action="/deepseek_llama" method="post">      
+            <form action="/deepseek_llama" method="post" class="column-1">      
                 <input type="submit" value="Deepseek & Llama">
             </form>
-            <form action="/telegram" method="post">      
+            <form action="/telegram" method="post" class="column-1">      
                 <input type="submit" class="telegram-btn" value="Start Telegram">
             </form>
-            <form action="/stop telegram" method="post">      
+            <form action="/stop telegram" method="post" class="column-1">      
                 <input type="submit" class="telegram-btn" value="Stop Telegram">
             </form>
-            <form action="/dbs" method="post">      
+            
+            <!-- Second Column -->
+            <form action="/dbs" method="post" class="column-2">      
                 <input type="submit" value="Predict DBS Price">
             </form>
-            <form action="/user_log" method="post">
+            <form action="/user_log" method="post" class="column-2">
                 <input type="submit" class="log-btn" value="Create User Logs">
             </form>
-            <form action="/delete_log" method="post">
+            <form action="/delete_log" method="post" class="column-2">
                 <input type="submit" class="log-btn" value="Delete Logs">
             </form>
-            <form action="/" method="get">      
+            <form action="/" method="get" class="column-2">      
                 <input type="submit" value="Back to Landing Page">
             </form>
             
