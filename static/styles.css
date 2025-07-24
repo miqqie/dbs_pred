@@ -69,11 +69,11 @@ body {
     position: absolute;
     background-color: white;
     border: 2px solid #333;
-    border-radius: 15px;
-    padding: 8px 15px;
-    font-size: 16px;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
     font-weight: bold;
-    top: -40px;
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -83,10 +83,10 @@ body {
 .speech-bubble:after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 10px 10px 0;
+    border-width: 8px 8px 0;
     border-style: solid;
     border-color: white transparent transparent;
     z-index: 3;
@@ -95,17 +95,17 @@ body {
 .speech-bubble:before {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 12px 12px 0;
+    border-width: 10px 10px 0;
     border-style: solid;
     border-color: #333 transparent transparent;
     z-index: 2;
 }
 
 .robot-side {
-    width: 260px;
+    width: 200px;
     height: auto;
     margin-right: -25px;
     vertical-align: middle;
