@@ -192,6 +192,27 @@ def deepseek_llama_reply():
         deepseek=formatted_deepseek,
         llama=formatted_llama
     )
+@app.route("/user_log",methods=["GET","POST"])
+def user_log():
+    conn = sqlite3.connect('user.db')
+    c = conn.cursor()
+    c.execute('''select * from user''')
+    r=""
+    for row in c:
+      print(row)
+      r = r + str(row)
+    c.close()
+    conn.close()
+    return render_template("user_log.html", r=r)
+
+@app.route("/delete_log",methods=["GET","POST"])
+def delete_log():
+    conn = sqlite3.connect('user.db')
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM user')
+    conn.commit()
+    conn.close()
+    return render_template("delete_log.html", message="User log deleted successfully.")
 
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
