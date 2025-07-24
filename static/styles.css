@@ -137,6 +137,14 @@ h2 {
     z-index: 10;
 }
 
+.main-container .main-content {
+    margin-top: 30px;
+}
+
+.main-container .button-container {
+    padding-left: 10px;
+}
+
 form {
     margin: 15px 0;
 }
