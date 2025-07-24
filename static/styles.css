@@ -193,6 +193,15 @@ button:hover {
     background-color: #7fc6f4 !important;
 }
 
+.log-btn {
+    background-color: #aaaaaa !important;
+    color: black;
+}
+
+.log-btn:hover {
+    background-color: #cccccc !important;
+}
+
 
 p {
     margin-top: 20px;
