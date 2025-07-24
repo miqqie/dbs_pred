@@ -255,6 +255,7 @@ def sepia():
 
 @app.route('/sepia_hf', methods=['GET', 'POST'])
 def sepia_hf():
+    
     return render_template("sepia_hf.html")
 
 @app.route("/prediction",methods=["GET","POST"])
