@@ -209,7 +209,7 @@ def user_log():
     return render_template("user_log.html")
 
 @app.route("/delete_log", methods=["GET", "POST"])
-def user_log():
+def delete_log():
     return render_template("delete_log.html")
 
 if __name__ == "__main__":
