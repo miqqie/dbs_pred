@@ -45,9 +45,10 @@ body {
     grid-gap: 15px;
     position: relative;
     z-index: 2;
-    padding-left: 25px;
+    padding: 0;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .column-1 {
