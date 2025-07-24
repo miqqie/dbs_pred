@@ -249,6 +249,14 @@ def delete_log():
     except Exception as e:
         return f"Error: {str(e)}", 500
 
+@app.route('/sepia', methods=['GET', 'POST'])
+def sepia():
+    return render_template("sepia_hf.html")
+
+@app.route('/sepia_hf', methods=['GET', 'POST'])
+def sepia_hf():
+    return render_template("sepia_hf.html")
+
 @app.route("/prediction",methods=["GET","POST"])
 def prediction():
     q = float(request.form.get("q"))

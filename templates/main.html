@@ -8,34 +8,31 @@
             <img src="{{ url_for('static', filename='images/robot.svg') }}" alt="Robot" class="robot-side">
         </div>
         <div class="button-container">
-            <!-- First Column -->
-            <form action="/llama" method="post" class="column-1">      
+            <form action="/llama" method="post">      
                 <input type="submit" value="Llama chatbot">
             </form>
-            <form action="/deepseek" method="post" class="column-1">      
+            <form action="/deepseek" method="post">      
                 <input type="submit" value="Deepseek chatbot">
             </form>
-            <form action="/deepseek_llama" method="post" class="column-1">      
+            <form action="/deepseek_llama" method="post">      
                 <input type="submit" value="Deepseek & Llama">
             </form>
-            <form action="/user_log" method="post" class="column-1">
-                <input type="submit" class="log-btn" value="Create User Logs">
-            </form>
-            <form action="/delete_log" method="post" class="column-1">
-                <input type="submit" class="log-btn" value="Delete Logs">
-            </form>
-            
-            <!-- Second Column -->
-            <form action="/dbs" method="post" class="column-2">      
-                <input type="submit" value="Predict DBS Price">
-            </form>
-            <form action="/telegram" method="post" class="column-2">      
+            <form action="/telegram" method="post">      
                 <input type="submit" class="telegram-btn" value="Start Telegram">
             </form>
-            <form action="/stop telegram" method="post" class="column-2">      
+            <form action="/stop telegram" method="post">      
                 <input type="submit" class="telegram-btn" value="Stop Telegram">
             </form>
-            <form action="/" method="get" class="column-2">      
+            <form action="/dbs" method="post">      
+                <input type="submit" value="Predict DBS Price">
+            </form>
+            <form action="/user_log" method="post">
+                <input type="submit" class="log-btn" value="Create User Logs">
+            </form>
+            <form action="/delete_log" method="post">
+                <input type="submit" class="log-btn" value="Delete Logs">
+            </form>
+            <form action="/" method="get">      
                 <input type="submit" value="Back to Landing Page">
             </form>
             
