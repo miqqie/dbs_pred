@@ -141,6 +141,13 @@ h2 {
 @media (max-width: 768px) {
     .main-container h2[style*="font-size: 36px"] {
         margin-top: 10px;
+        text-align: left;
+        padding-left: 20px;
+    }
+    
+    .main-container .robot-container {
+        margin-right: 0;
+        margin-left: 20px;
     }
 }
 
