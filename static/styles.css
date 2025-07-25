@@ -128,6 +128,7 @@ h2 {
 
 .main-container {
     min-height: 600px;
+    max-width: 1000px;
 }
 
 .main-container h2[style*="font-size: 36px"] {
@@ -149,6 +150,10 @@ h2 {
 
 .main-container .button-container {
     padding-left: 0px;
+}
+
+.main-container .robot-container {
+    margin-right: 40px;
 }
 
 form {
